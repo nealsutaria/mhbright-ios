@@ -30,7 +30,9 @@ struct HomeView: View {
                 }
 
                 Button {
-                    authManager.logout()
+                    Task {
+                        await authManager.logout()
+                    }
                 } label: {
                     Text("Log Out")
                         .fontWeight(.semibold)

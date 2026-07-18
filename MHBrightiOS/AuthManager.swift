@@ -27,7 +27,18 @@ class AuthManager: ObservableObject {
         UserDefaults.standard.set(response.user.email, forKey: emailKey)
     }
 
-    func logout() {
+    func logout() async {
+        let currentToken = token
+
+        if let currentToken {
+            do {
+                try await APIClient.shared.logout(token: currentToken)
+            } catch {
+                print("Server logout failed:")
+                print(error)
+            }
+        }
+
         self.token = nil
         self.userEmail = nil
 

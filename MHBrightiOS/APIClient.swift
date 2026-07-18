@@ -325,6 +325,25 @@ class APIClient {
 
         return try JSONDecoder().decode(HealthRecord.self, from: data)
     }
+    
+    func logout(token: String) async throws {
+        let url = baseURL.appendingPathComponent("/api/v1/logout")
+
+        var request = URLRequest(url: url)
+        request.httpMethod = "DELETE"
+        request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
+        request.setValue("application/json", forHTTPHeaderField: "Accept")
+
+        let (_, response) = try await URLSession.shared.data(for: request)
+
+        guard let httpResponse = response as? HTTPURLResponse else {
+            throw APIError.invalidResponse
+        }
+
+        guard httpResponse.statusCode == 200 else {
+            throw APIError.badStatusCode(httpResponse.statusCode)
+        }
+    }
 }
 
 enum APIError: Error {
