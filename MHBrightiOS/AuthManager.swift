@@ -5,6 +5,14 @@ class AuthManager: ObservableObject {
     @Published var token: String?
     @Published var userEmail: String?
 
+    private let tokenKey = "mhbright_api_token"
+    private let emailKey = "mhbright_user_email"
+
+    init() {
+        self.token = UserDefaults.standard.string(forKey: tokenKey)
+        self.userEmail = UserDefaults.standard.string(forKey: emailKey)
+    }
+
     var isLoggedIn: Bool {
         token != nil
     }
@@ -14,10 +22,16 @@ class AuthManager: ObservableObject {
 
         self.token = response.token
         self.userEmail = response.user.email
+
+        UserDefaults.standard.set(response.token, forKey: tokenKey)
+        UserDefaults.standard.set(response.user.email, forKey: emailKey)
     }
 
     func logout() {
         self.token = nil
         self.userEmail = nil
+
+        UserDefaults.standard.removeObject(forKey: tokenKey)
+        UserDefaults.standard.removeObject(forKey: emailKey)
     }
 }
