@@ -9,6 +9,11 @@ struct RecordDetailView: View {
     @State private var isLoading = false
     @State private var errorMessage = ""
     @State private var isAnalyzing = false
+    
+    @State private var showDeleteConfirmation = false
+    @State private var isDeleting = false
+    
+    @Environment(\.dismiss) private var dismiss
 
     var body: some View {
         ScrollView {
@@ -112,6 +117,27 @@ struct RecordDetailView: View {
         }
         .navigationTitle("Record")
         .navigationBarTitleDisplayMode(.inline)
+        .toolbar {
+            ToolbarItem(placement: .topBarTrailing) {
+                Button(role: .destructive) {
+                    showDeleteConfirmation = true
+                } label: {
+                    Image(systemName: "trash")
+                }
+                .disabled(isDeleting)
+            }
+        }
+        .alert("Delete Record?", isPresented: $showDeleteConfirmation) {
+            Button("Delete", role: .destructive) {
+                Task {
+                    await deleteRecord()
+                }
+            }
+
+            Button("Cancel", role: .cancel) {}
+        } message: {
+            Text("This record will be permanently deleted.")
+        }
         .task {
             await loadRecord()
         }
@@ -173,7 +199,29 @@ struct RecordDetailView: View {
 
         return text
     }
+    
+    private func deleteRecord() async {
+        guard let token = authManager.token else {
+            errorMessage = "Missing login token."
+            return
+        }
+
+        isDeleting = true
+        errorMessage = ""
+
+        do {
+            try await APIClient.shared.deleteRecord(id: recordId, token: token)
+            dismiss()
+        } catch {
+            errorMessage = "Could not delete record."
+            print(error)
+        }
+
+        isDeleting = false
+    }
 }
+
+
 
 struct DetailCard<Content: View>: View {
     let title: String
