@@ -14,6 +14,14 @@
 		D5DE6502300B9917005781C0 /* MHBrightiOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5DE6501300B9917005781C0 /* MHBrightiOSTests.swift */; };
 		D5DE650C300B9917005781C0 /* MHBrightiOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5DE650B300B9917005781C0 /* MHBrightiOSUITests.swift */; };
 		D5DE650E300B9917005781C0 /* MHBrightiOSUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5DE650D300B9917005781C0 /* MHBrightiOSUITestsLaunchTests.swift */; };
+		D5DE651B300B9AD9005781C0 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5DE651A300B9AD9005781C0 /* LoginView.swift */; };
+		D5DE651D300B9D2E005781C0 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5DE651C300B9D2E005781C0 /* APIClient.swift */; };
+		D5DE651F300B9E41005781C0 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5DE651E300B9E41005781C0 /* AuthManager.swift */; };
+		D5DE6521300B9FAF005781C0 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5DE6520300B9FAF005781C0 /* HomeView.swift */; };
+		D5DE6523300BA06D005781C0 /* HealthRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5DE6522300BA06D005781C0 /* HealthRecord.swift */; };
+		D5DE6525300BA11C005781C0 /* RecordsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5DE6524300BA11C005781C0 /* RecordsListView.swift */; };
+		D5DE6527300C3425005781C0 /* RecordDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5DE6526300C3425005781C0 /* RecordDetailView.swift */; };
+		D5DE6529300C3861005781C0 /* NewRecordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5DE6528300C3861005781C0 /* NewRecordView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +52,14 @@
 		D5DE6507300B9917005781C0 /* MHBrightiOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MHBrightiOSUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5DE650B300B9917005781C0 /* MHBrightiOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MHBrightiOSUITests.swift; sourceTree = "<group>"; };
 		D5DE650D300B9917005781C0 /* MHBrightiOSUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MHBrightiOSUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		D5DE651A300B9AD9005781C0 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		D5DE651C300B9D2E005781C0 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		D5DE651E300B9E41005781C0 /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
+		D5DE6520300B9FAF005781C0 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		D5DE6522300BA06D005781C0 /* HealthRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthRecord.swift; sourceTree = "<group>"; };
+		D5DE6524300BA11C005781C0 /* RecordsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordsListView.swift; sourceTree = "<group>"; };
+		D5DE6526300C3425005781C0 /* RecordDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordDetailView.swift; sourceTree = "<group>"; };
+		D5DE6528300C3861005781C0 /* NewRecordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewRecordView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,9 +111,17 @@
 			isa = PBXGroup;
 			children = (
 				D5DE64F0300B9913005781C0 /* MHBrightiOSApp.swift */,
+				D5DE651C300B9D2E005781C0 /* APIClient.swift */,
 				D5DE64F2300B9913005781C0 /* ContentView.swift */,
 				D5DE64F4300B9916005781C0 /* Assets.xcassets */,
 				D5DE64F6300B9916005781C0 /* Preview Content */,
+				D5DE651A300B9AD9005781C0 /* LoginView.swift */,
+				D5DE651E300B9E41005781C0 /* AuthManager.swift */,
+				D5DE6520300B9FAF005781C0 /* HomeView.swift */,
+				D5DE6522300BA06D005781C0 /* HealthRecord.swift */,
+				D5DE6524300BA11C005781C0 /* RecordsListView.swift */,
+				D5DE6526300C3425005781C0 /* RecordDetailView.swift */,
+				D5DE6528300C3861005781C0 /* NewRecordView.swift */,
 			);
 			path = MHBrightiOS;
 			sourceTree = "<group>";
@@ -257,8 +281,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D5DE651B300B9AD9005781C0 /* LoginView.swift in Sources */,
+				D5DE6525300BA11C005781C0 /* RecordsListView.swift in Sources */,
+				D5DE6529300C3861005781C0 /* NewRecordView.swift in Sources */,
 				D5DE64F3300B9913005781C0 /* ContentView.swift in Sources */,
 				D5DE64F1300B9913005781C0 /* MHBrightiOSApp.swift in Sources */,
+				D5DE6521300B9FAF005781C0 /* HomeView.swift in Sources */,
+				D5DE6527300C3425005781C0 /* RecordDetailView.swift in Sources */,
+				D5DE651D300B9D2E005781C0 /* APIClient.swift in Sources */,
+				D5DE651F300B9E41005781C0 /* AuthManager.swift in Sources */,
+				D5DE6523300BA06D005781C0 /* HealthRecord.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

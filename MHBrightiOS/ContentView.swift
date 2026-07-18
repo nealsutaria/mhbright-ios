@@ -1,21 +1,16 @@
-//
-//  ContentView.swift
-//  MHBrightiOS
-//
-//  Created by Neal Sutaria on 7/18/26.
-//
-
 import SwiftUI
 
 struct ContentView: View {
+    @StateObject private var authManager = AuthManager()
+
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        if authManager.isLoggedIn {
+            HomeView()
+                .environmentObject(authManager)
+        } else {
+            LoginView()
+                .environmentObject(authManager)
         }
-        .padding()
     }
 }
 
