@@ -275,6 +275,56 @@ class APIClient {
             throw APIError.badStatusCode(httpResponse.statusCode)
         }
     }
+    
+    func updateRecord(
+        id: Int,
+        token: String,
+        date: String,
+        reason: String,
+        prescription: Bool,
+        prescriptionName: String,
+        xrayDone: Bool,
+        testDone: Bool,
+        testType: String,
+        doctorRating: Int?,
+        comments: String
+    ) async throws -> HealthRecord {
+        let url = baseURL.appendingPathComponent("/api/v1/records/\(id)")
+
+        var request = URLRequest(url: url)
+        request.httpMethod = "PATCH"
+        request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.setValue("application/json", forHTTPHeaderField: "Accept")
+
+        let body = CreateRecordRequest(
+            record: CreateRecordBody(
+                date: date,
+                reason: reason,
+                prescription: prescription,
+                prescriptionName: prescriptionName,
+                xrayDone: xrayDone,
+                testDone: testDone,
+                testType: testType,
+                doctorRating: doctorRating,
+                comments: comments
+            )
+        )
+
+        request.httpBody = try JSONEncoder().encode(body)
+
+        let (data, response) = try await URLSession.shared.data(for: request)
+
+        guard let httpResponse = response as? HTTPURLResponse else {
+            throw APIError.invalidResponse
+        }
+
+        guard httpResponse.statusCode == 200 else {
+            throw APIError.badStatusCode(httpResponse.statusCode)
+        }
+
+        return try JSONDecoder().decode(HealthRecord.self, from: data)
+    }
 }
 
 enum APIError: Error {

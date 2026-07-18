@@ -13,6 +13,8 @@ struct RecordDetailView: View {
     @State private var showDeleteConfirmation = false
     @State private var isDeleting = false
     
+    @State private var showEditSheet = false
+    
     @Environment(\.dismiss) private var dismiss
 
     var body: some View {
@@ -118,13 +120,30 @@ struct RecordDetailView: View {
         .navigationTitle("Record")
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {
-            ToolbarItem(placement: .topBarTrailing) {
+            ToolbarItemGroup(placement: .topBarTrailing) {
+                Button {
+                    showEditSheet = true
+                } label: {
+                    Image(systemName: "pencil")
+                }
+                .disabled(record == nil)
+
                 Button(role: .destructive) {
                     showDeleteConfirmation = true
                 } label: {
                     Image(systemName: "trash")
                 }
                 .disabled(isDeleting)
+            }
+        }
+        .sheet(isPresented: $showEditSheet) {
+            if let record {
+                NavigationStack {
+                    EditRecordView(record: record) { updatedRecord in
+                        self.record = updatedRecord
+                    }
+                    .environmentObject(authManager)
+                }
             }
         }
         .alert("Delete Record?", isPresented: $showDeleteConfirmation) {

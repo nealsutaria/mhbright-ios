@@ -22,6 +22,7 @@
 		D5DE6525300BA11C005781C0 /* RecordsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5DE6524300BA11C005781C0 /* RecordsListView.swift */; };
 		D5DE6527300C3425005781C0 /* RecordDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5DE6526300C3425005781C0 /* RecordDetailView.swift */; };
 		D5DE6529300C3861005781C0 /* NewRecordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5DE6528300C3861005781C0 /* NewRecordView.swift */; };
+		D5DE652B300C3F21005781C0 /* EditRecordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5DE652A300C3F21005781C0 /* EditRecordView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,7 @@
 		D5DE6524300BA11C005781C0 /* RecordsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordsListView.swift; sourceTree = "<group>"; };
 		D5DE6526300C3425005781C0 /* RecordDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordDetailView.swift; sourceTree = "<group>"; };
 		D5DE6528300C3861005781C0 /* NewRecordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewRecordView.swift; sourceTree = "<group>"; };
+		D5DE652A300C3F21005781C0 /* EditRecordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditRecordView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +124,7 @@
 				D5DE6524300BA11C005781C0 /* RecordsListView.swift */,
 				D5DE6526300C3425005781C0 /* RecordDetailView.swift */,
 				D5DE6528300C3861005781C0 /* NewRecordView.swift */,
+				D5DE652A300C3F21005781C0 /* EditRecordView.swift */,
 			);
 			path = MHBrightiOS;
 			sourceTree = "<group>";
@@ -283,6 +286,7 @@
 			files = (
 				D5DE651B300B9AD9005781C0 /* LoginView.swift in Sources */,
 				D5DE6525300BA11C005781C0 /* RecordsListView.swift in Sources */,
+				D5DE652B300C3F21005781C0 /* EditRecordView.swift in Sources */,
 				D5DE6529300C3861005781C0 /* NewRecordView.swift in Sources */,
 				D5DE64F3300B9913005781C0 /* ContentView.swift in Sources */,
 				D5DE64F1300B9913005781C0 /* MHBrightiOSApp.swift in Sources */,
