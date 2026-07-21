@@ -9,7 +9,7 @@ class AuthManager: ObservableObject {
     private let emailKey = "mhbright_user_email"
 
     init() {
-        self.token = UserDefaults.standard.string(forKey: tokenKey)
+        self.token = KeychainManager.read(for: tokenKey)
         self.userEmail = UserDefaults.standard.string(forKey: emailKey)
     }
 
@@ -20,13 +20,12 @@ class AuthManager: ObservableObject {
     func login(email: String, password: String) async throws {
         let response = try await APIClient.shared.login(email: email, password: password)
 
-        self.token = response.token
-        self.userEmail = response.user.email
-
-        UserDefaults.standard.set(response.token, forKey: tokenKey)
-        UserDefaults.standard.set(response.user.email, forKey: emailKey)
+        saveAuthSession(
+            token: response.token,
+            email: response.user.email
+        )
     }
-    
+
     func signup(email: String, password: String, passwordConfirmation: String) async throws {
         let response = try await APIClient.shared.signup(
             email: email,
@@ -34,11 +33,19 @@ class AuthManager: ObservableObject {
             passwordConfirmation: passwordConfirmation
         )
 
-        self.token = response.token
-        self.userEmail = response.user.email
+        saveAuthSession(
+            token: response.token,
+            email: response.user.email
+        )
+    }
 
-        UserDefaults.standard.set(response.token, forKey: tokenKey)
-        UserDefaults.standard.set(response.user.email, forKey: emailKey)
+    func loginWithGoogle(idToken: String) async throws {
+        let response = try await APIClient.shared.googleLogin(idToken: idToken)
+
+        saveAuthSession(
+            token: response.token,
+            email: response.user.email
+        )
     }
 
     func logout() async {
@@ -53,20 +60,22 @@ class AuthManager: ObservableObject {
             }
         }
 
+        clearAuthSession()
+    }
+
+    private func saveAuthSession(token: String, email: String) {
+        self.token = token
+        self.userEmail = email
+
+        KeychainManager.save(token, for: tokenKey)
+        UserDefaults.standard.set(email, forKey: emailKey)
+    }
+
+    private func clearAuthSession() {
         self.token = nil
         self.userEmail = nil
 
-        UserDefaults.standard.removeObject(forKey: tokenKey)
+        KeychainManager.delete(for: tokenKey)
         UserDefaults.standard.removeObject(forKey: emailKey)
-    }
-    
-    func loginWithGoogle(idToken: String) async throws {
-        let response = try await APIClient.shared.googleLogin(idToken: idToken)
-
-        self.token = response.token
-        self.userEmail = response.user.email
-
-        UserDefaults.standard.set(response.token, forKey: tokenKey)
-        UserDefaults.standard.set(response.user.email, forKey: emailKey)
     }
 }

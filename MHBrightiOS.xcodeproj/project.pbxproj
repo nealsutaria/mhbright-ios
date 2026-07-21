@@ -36,6 +36,7 @@
 		D5DE6542300F3455005781C0 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = D5DE6541300F3455005781C0 /* GoogleSignIn */; };
 		D5DE6544300F3455005781C0 /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = D5DE6543300F3455005781C0 /* GoogleSignInSwift */; };
 		D5DE6547300F36A9005781C0 /* GoogleConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5DE6546300F36A9005781C0 /* GoogleConfig.swift */; };
+		D5DE654930101F5B005781C0 /* KeychainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5DE654830101F5B005781C0 /* KeychainManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +88,7 @@
 		D5DE653E300F317A005781C0 /* SignupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupView.swift; sourceTree = "<group>"; };
 		D5DE6545300F3653005781C0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		D5DE6546300F36A9005781C0 /* GoogleConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleConfig.swift; sourceTree = "<group>"; };
+		D5DE654830101F5B005781C0 /* KeychainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,6 +166,7 @@
 				D5DE653C300F2EB7005781C0 /* CopilotView.swift */,
 				D5DE653E300F317A005781C0 /* SignupView.swift */,
 				D5DE6546300F36A9005781C0 /* GoogleConfig.swift */,
+				D5DE654830101F5B005781C0 /* KeychainManager.swift */,
 			);
 			path = MHBrightiOS;
 			sourceTree = "<group>";
@@ -347,6 +350,7 @@
 				D5DE6539300F2DD2005781C0 /* HealthInsight.swift in Sources */,
 				D5DE6527300C3425005781C0 /* RecordDetailView.swift in Sources */,
 				D5DE651D300B9D2E005781C0 /* APIClient.swift in Sources */,
+				D5DE654930101F5B005781C0 /* KeychainManager.swift in Sources */,
 				D5DE652D300F2747005781C0 /* ChatMessage.swift in Sources */,
 				D5DE653B300F2E21005781C0 /* HealthInsightsView.swift in Sources */,
 				D5DE653D300F2EB7005781C0 /* CopilotView.swift in Sources */,
