@@ -575,6 +575,33 @@ class APIClient {
 
         return try JSONDecoder().decode(LoginResponse.self, from: data)
     }
+    
+    func googleLogin(idToken: String) async throws -> LoginResponse {
+        let url = baseURL.appendingPathComponent("/api/v1/google_login")
+
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.setValue("application/json", forHTTPHeaderField: "Accept")
+
+        let body = [
+            "id_token": idToken
+        ]
+
+        request.httpBody = try JSONEncoder().encode(body)
+
+        let (data, response) = try await URLSession.shared.data(for: request)
+
+        guard let httpResponse = response as? HTTPURLResponse else {
+            throw APIError.invalidResponse
+        }
+
+        guard httpResponse.statusCode == 200 else {
+            throw APIError.badStatusCode(httpResponse.statusCode)
+        }
+
+        return try JSONDecoder().decode(LoginResponse.self, from: data)
+    }
 }
 
 enum APIError: Error {

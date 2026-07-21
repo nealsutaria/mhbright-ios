@@ -59,4 +59,14 @@ class AuthManager: ObservableObject {
         UserDefaults.standard.removeObject(forKey: tokenKey)
         UserDefaults.standard.removeObject(forKey: emailKey)
     }
+    
+    func loginWithGoogle(idToken: String) async throws {
+        let response = try await APIClient.shared.googleLogin(idToken: idToken)
+
+        self.token = response.token
+        self.userEmail = response.user.email
+
+        UserDefaults.standard.set(response.token, forKey: tokenKey)
+        UserDefaults.standard.set(response.user.email, forKey: emailKey)
+    }
 }

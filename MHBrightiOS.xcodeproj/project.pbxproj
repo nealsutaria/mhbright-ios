@@ -33,6 +33,9 @@
 		D5DE653B300F2E21005781C0 /* HealthInsightsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5DE653A300F2E21005781C0 /* HealthInsightsView.swift */; };
 		D5DE653D300F2EB7005781C0 /* CopilotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5DE653C300F2EB7005781C0 /* CopilotView.swift */; };
 		D5DE653F300F317A005781C0 /* SignupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5DE653E300F317A005781C0 /* SignupView.swift */; };
+		D5DE6542300F3455005781C0 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = D5DE6541300F3455005781C0 /* GoogleSignIn */; };
+		D5DE6544300F3455005781C0 /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = D5DE6543300F3455005781C0 /* GoogleSignInSwift */; };
+		D5DE6547300F36A9005781C0 /* GoogleConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5DE6546300F36A9005781C0 /* GoogleConfig.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +85,8 @@
 		D5DE653A300F2E21005781C0 /* HealthInsightsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthInsightsView.swift; sourceTree = "<group>"; };
 		D5DE653C300F2EB7005781C0 /* CopilotView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CopilotView.swift; sourceTree = "<group>"; };
 		D5DE653E300F317A005781C0 /* SignupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupView.swift; sourceTree = "<group>"; };
+		D5DE6545300F3653005781C0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		D5DE6546300F36A9005781C0 /* GoogleConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleConfig.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +94,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D5DE6542300F3455005781C0 /* GoogleSignIn in Frameworks */,
+				D5DE6544300F3455005781C0 /* GoogleSignInSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -132,6 +139,7 @@
 		D5DE64EF300B9913005781C0 /* MHBrightiOS */ = {
 			isa = PBXGroup;
 			children = (
+				D5DE6545300F3653005781C0 /* Info.plist */,
 				D5DE64F0300B9913005781C0 /* MHBrightiOSApp.swift */,
 				D5DE6534300F2BC1005781C0 /* AppointmentBriefDetailView.swift */,
 				D5DE651C300B9D2E005781C0 /* APIClient.swift */,
@@ -155,6 +163,7 @@
 				D5DE653A300F2E21005781C0 /* HealthInsightsView.swift */,
 				D5DE653C300F2EB7005781C0 /* CopilotView.swift */,
 				D5DE653E300F317A005781C0 /* SignupView.swift */,
+				D5DE6546300F36A9005781C0 /* GoogleConfig.swift */,
 			);
 			path = MHBrightiOS;
 			sourceTree = "<group>";
@@ -200,6 +209,10 @@
 			dependencies = (
 			);
 			name = MHBrightiOS;
+			packageProductDependencies = (
+				D5DE6541300F3455005781C0 /* GoogleSignIn */,
+				D5DE6543300F3455005781C0 /* GoogleSignInSwift */,
+			);
 			productName = MHBrightiOS;
 			productReference = D5DE64ED300B9913005781C0 /* MHBrightiOS.app */;
 			productType = "com.apple.product-type.application";
@@ -272,6 +285,9 @@
 				Base,
 			);
 			mainGroup = D5DE64E4300B9912005781C0;
+			packageReferences = (
+				D5DE6540300F3455005781C0 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
+			);
 			productRefGroup = D5DE64EE300B9913005781C0 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -318,6 +334,7 @@
 				D5DE6535300F2BC1005781C0 /* AppointmentBriefDetailView.swift in Sources */,
 				D5DE651B300B9AD9005781C0 /* LoginView.swift in Sources */,
 				D5DE6525300BA11C005781C0 /* RecordsListView.swift in Sources */,
+				D5DE6547300F36A9005781C0 /* GoogleConfig.swift in Sources */,
 				D5DE652B300C3F21005781C0 /* EditRecordView.swift in Sources */,
 				D5DE6529300C3861005781C0 /* NewRecordView.swift in Sources */,
 				D5DE64F3300B9913005781C0 /* ContentView.swift in Sources */,
@@ -500,6 +517,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"MHBrightiOS/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MHBrightiOS/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -528,6 +546,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"MHBrightiOS/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MHBrightiOS/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -658,6 +677,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		D5DE6540300F3455005781C0 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/google/GoogleSignIn-iOS";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 8.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		D5DE6541300F3455005781C0 /* GoogleSignIn */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D5DE6540300F3455005781C0 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
+			productName = GoogleSignIn;
+		};
+		D5DE6543300F3455005781C0 /* GoogleSignInSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D5DE6540300F3455005781C0 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
+			productName = GoogleSignInSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = D5DE64E5300B9912005781C0 /* Project object */;
 }

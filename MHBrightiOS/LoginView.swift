@@ -1,4 +1,6 @@
 import SwiftUI
+import GoogleSignIn
+import GoogleSignInSwift
 
 struct LoginView: View {
     @EnvironmentObject var authManager: AuthManager
@@ -7,6 +9,7 @@ struct LoginView: View {
     @State private var password = ""
     @State private var errorMessage = ""
     @State private var isLoggingIn = false
+    @State private var isGoogleLoggingIn = false
 
     var body: some View {
         VStack(spacing: 24) {
@@ -65,6 +68,24 @@ struct LoginView: View {
             .clipShape(RoundedRectangle(cornerRadius: 14))
             .disabled(isLoggingIn || email.isEmpty || password.isEmpty)
 
+            VStack(spacing: 12) {
+                Text("or")
+                    .font(.footnote)
+                    .foregroundStyle(.secondary)
+                
+                Text("Continue with Google")
+                        .font(.footnote)
+                        .foregroundStyle(.secondary)
+
+                GoogleSignInButton {
+                    Task {
+                        await signInWithGoogle()
+                    }
+                }
+                .frame(height: 50)
+                .disabled(isGoogleLoggingIn)
+            }
+
             NavigationLink {
                 SignupView()
                     .environmentObject(authManager)
@@ -102,6 +123,39 @@ struct LoginView: View {
         }
 
         isLoggingIn = false
+    }
+
+    private func signInWithGoogle() async {
+        guard let rootViewController = UIApplication.shared.connectedScenes
+            .compactMap({ $0 as? UIWindowScene })
+            .flatMap({ $0.windows })
+            .first(where: { $0.isKeyWindow })?
+            .rootViewController else {
+            errorMessage = "Could not open Google Sign-In."
+            return
+        }
+
+        isGoogleLoggingIn = true
+        errorMessage = ""
+
+        do {
+            let result = try await GIDSignIn.sharedInstance.signIn(
+                withPresenting: rootViewController
+            )
+
+            guard let idToken = result.user.idToken?.tokenString else {
+                errorMessage = "Could not get Google ID token."
+                isGoogleLoggingIn = false
+                return
+            }
+
+            try await authManager.loginWithGoogle(idToken: idToken)
+        } catch {
+            errorMessage = "Google login failed."
+            print(error)
+        }
+
+        isGoogleLoggingIn = false
     }
 }
 

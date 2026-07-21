@@ -1,14 +1,14 @@
-//
-//  MHBrightiOSApp.swift
-//  MHBrightiOS
-//
-//  Created by Neal Sutaria on 7/18/26.
-//
-
 import SwiftUI
+import GoogleSignIn
 
 @main
 struct MHBrightiOSApp: App {
+    init() {
+        GIDSignIn.sharedInstance.configuration = GIDConfiguration(
+            clientID: GoogleConfig.clientID
+        )
+    }
+
     var body: some Scene {
         WindowGroup {
             ContentView()
