@@ -37,6 +37,8 @@
 		D5DE6544300F3455005781C0 /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = D5DE6543300F3455005781C0 /* GoogleSignInSwift */; };
 		D5DE6547300F36A9005781C0 /* GoogleConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5DE6546300F36A9005781C0 /* GoogleConfig.swift */; };
 		D5DE654930101F5B005781C0 /* KeychainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5DE654830101F5B005781C0 /* KeychainManager.swift */; };
+		D5DE654B301021B0005781C0 /* HealthMemory.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5DE654A301021B0005781C0 /* HealthMemory.swift */; };
+		D5DE654D3010220D005781C0 /* HealthMemoriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5DE654C3010220D005781C0 /* HealthMemoriesView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,6 +91,8 @@
 		D5DE6545300F3653005781C0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		D5DE6546300F36A9005781C0 /* GoogleConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleConfig.swift; sourceTree = "<group>"; };
 		D5DE654830101F5B005781C0 /* KeychainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainManager.swift; sourceTree = "<group>"; };
+		D5DE654A301021B0005781C0 /* HealthMemory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthMemory.swift; sourceTree = "<group>"; };
+		D5DE654C3010220D005781C0 /* HealthMemoriesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthMemoriesView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,6 +171,8 @@
 				D5DE653E300F317A005781C0 /* SignupView.swift */,
 				D5DE6546300F36A9005781C0 /* GoogleConfig.swift */,
 				D5DE654830101F5B005781C0 /* KeychainManager.swift */,
+				D5DE654A301021B0005781C0 /* HealthMemory.swift */,
+				D5DE654C3010220D005781C0 /* HealthMemoriesView.swift */,
 			);
 			path = MHBrightiOS;
 			sourceTree = "<group>";
@@ -353,8 +359,10 @@
 				D5DE654930101F5B005781C0 /* KeychainManager.swift in Sources */,
 				D5DE652D300F2747005781C0 /* ChatMessage.swift in Sources */,
 				D5DE653B300F2E21005781C0 /* HealthInsightsView.swift in Sources */,
+				D5DE654B301021B0005781C0 /* HealthMemory.swift in Sources */,
 				D5DE653D300F2EB7005781C0 /* CopilotView.swift in Sources */,
 				D5DE651F300B9E41005781C0 /* AuthManager.swift in Sources */,
+				D5DE654D3010220D005781C0 /* HealthMemoriesView.swift in Sources */,
 				D5DE6523300BA06D005781C0 /* HealthRecord.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -14,7 +14,7 @@ struct CopilotView: View {
                         Text("Appointment Briefs")
                             .font(.headline)
 
-                        Text("Generate doctor visit prep notes from your saved health memories.")
+                        Text("Generate doctor visit prep notes from your saved health records.")
                             .font(.subheadline)
                             .foregroundStyle(.secondary)
                     }

@@ -602,6 +602,28 @@ class APIClient {
 
         return try JSONDecoder().decode(LoginResponse.self, from: data)
     }
+    
+    func fetchHealthMemories(token: String) async throws -> [HealthMemory] {
+        let url = baseURL.appendingPathComponent("/api/v1/health_memories")
+
+        var request = URLRequest(url: url)
+        request.httpMethod = "GET"
+        request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
+        request.setValue("application/json", forHTTPHeaderField: "Accept")
+
+        let (data, response) = try await URLSession.shared.data(for: request)
+
+        guard let httpResponse = response as? HTTPURLResponse else {
+            throw APIError.invalidResponse
+        }
+
+        guard httpResponse.statusCode == 200 else {
+            throw APIError.badStatusCode(httpResponse.statusCode)
+        }
+
+        let decoded = try JSONDecoder().decode(HealthMemoriesResponse.self, from: data)
+        return decoded.healthMemories
+    }
 }
 
 enum APIError: Error {
