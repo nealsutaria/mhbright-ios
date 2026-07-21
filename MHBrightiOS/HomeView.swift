@@ -40,6 +40,18 @@ struct HomeView: View {
                         .background(Color.green.opacity(0.15))
                         .clipShape(RoundedRectangle(cornerRadius: 12))
                 }
+                
+                NavigationLink {
+                    AppointmentBriefsListView()
+                        .environmentObject(authManager)
+                } label: {
+                    Text("Copilot")
+                        .font(.headline)
+                        .frame(maxWidth: .infinity)
+                        .padding()
+                        .background(Color.purple.opacity(0.15))
+                        .clipShape(RoundedRectangle(cornerRadius: 12))
+                }
 
                 Button {
                     Task {

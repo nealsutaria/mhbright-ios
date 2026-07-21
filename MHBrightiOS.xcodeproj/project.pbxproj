@@ -25,6 +25,10 @@
 		D5DE652B300C3F21005781C0 /* EditRecordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5DE652A300C3F21005781C0 /* EditRecordView.swift */; };
 		D5DE652D300F2747005781C0 /* ChatMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5DE652C300F2747005781C0 /* ChatMessage.swift */; };
 		D5DE652F300F27D3005781C0 /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5DE652E300F27D3005781C0 /* ChatView.swift */; };
+		D5DE6531300F2ADE005781C0 /* AppointmentBrief.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5DE6530300F2ADE005781C0 /* AppointmentBrief.swift */; };
+		D5DE6533300F2B72005781C0 /* AppointmentBriefsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5DE6532300F2B72005781C0 /* AppointmentBriefsListView.swift */; };
+		D5DE6535300F2BC1005781C0 /* AppointmentBriefDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5DE6534300F2BC1005781C0 /* AppointmentBriefDetailView.swift */; };
+		D5DE6537300F2BE9005781C0 /* NewAppointmentBriefView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5DE6536300F2BE9005781C0 /* NewAppointmentBriefView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +70,10 @@
 		D5DE652A300C3F21005781C0 /* EditRecordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditRecordView.swift; sourceTree = "<group>"; };
 		D5DE652C300F2747005781C0 /* ChatMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMessage.swift; sourceTree = "<group>"; };
 		D5DE652E300F27D3005781C0 /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
+		D5DE6530300F2ADE005781C0 /* AppointmentBrief.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppointmentBrief.swift; sourceTree = "<group>"; };
+		D5DE6532300F2B72005781C0 /* AppointmentBriefsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppointmentBriefsListView.swift; sourceTree = "<group>"; };
+		D5DE6534300F2BC1005781C0 /* AppointmentBriefDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppointmentBriefDetailView.swift; sourceTree = "<group>"; };
+		D5DE6536300F2BE9005781C0 /* NewAppointmentBriefView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewAppointmentBriefView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +125,7 @@
 			isa = PBXGroup;
 			children = (
 				D5DE64F0300B9913005781C0 /* MHBrightiOSApp.swift */,
+				D5DE6534300F2BC1005781C0 /* AppointmentBriefDetailView.swift */,
 				D5DE651C300B9D2E005781C0 /* APIClient.swift */,
 				D5DE64F2300B9913005781C0 /* ContentView.swift */,
 				D5DE64F4300B9916005781C0 /* Assets.xcassets */,
@@ -131,6 +140,9 @@
 				D5DE652A300C3F21005781C0 /* EditRecordView.swift */,
 				D5DE652C300F2747005781C0 /* ChatMessage.swift */,
 				D5DE652E300F27D3005781C0 /* ChatView.swift */,
+				D5DE6530300F2ADE005781C0 /* AppointmentBrief.swift */,
+				D5DE6532300F2B72005781C0 /* AppointmentBriefsListView.swift */,
+				D5DE6536300F2BE9005781C0 /* NewAppointmentBriefView.swift */,
 			);
 			path = MHBrightiOS;
 			sourceTree = "<group>";
@@ -290,13 +302,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D5DE6535300F2BC1005781C0 /* AppointmentBriefDetailView.swift in Sources */,
 				D5DE651B300B9AD9005781C0 /* LoginView.swift in Sources */,
 				D5DE6525300BA11C005781C0 /* RecordsListView.swift in Sources */,
 				D5DE652B300C3F21005781C0 /* EditRecordView.swift in Sources */,
 				D5DE6529300C3861005781C0 /* NewRecordView.swift in Sources */,
 				D5DE64F3300B9913005781C0 /* ContentView.swift in Sources */,
 				D5DE64F1300B9913005781C0 /* MHBrightiOSApp.swift in Sources */,
+				D5DE6537300F2BE9005781C0 /* NewAppointmentBriefView.swift in Sources */,
+				D5DE6531300F2ADE005781C0 /* AppointmentBrief.swift in Sources */,
 				D5DE652F300F27D3005781C0 /* ChatView.swift in Sources */,
+				D5DE6533300F2B72005781C0 /* AppointmentBriefsListView.swift in Sources */,
 				D5DE6521300B9FAF005781C0 /* HomeView.swift in Sources */,
 				D5DE6527300C3425005781C0 /* RecordDetailView.swift in Sources */,
 				D5DE651D300B9D2E005781C0 /* APIClient.swift in Sources */,
