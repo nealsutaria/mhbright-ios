@@ -42,7 +42,7 @@ struct HomeView: View {
                 }
                 
                 NavigationLink {
-                    AppointmentBriefsListView()
+                    CopilotView()
                         .environmentObject(authManager)
                 } label: {
                     Text("Copilot")

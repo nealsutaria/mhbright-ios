@@ -29,6 +29,9 @@
 		D5DE6533300F2B72005781C0 /* AppointmentBriefsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5DE6532300F2B72005781C0 /* AppointmentBriefsListView.swift */; };
 		D5DE6535300F2BC1005781C0 /* AppointmentBriefDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5DE6534300F2BC1005781C0 /* AppointmentBriefDetailView.swift */; };
 		D5DE6537300F2BE9005781C0 /* NewAppointmentBriefView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5DE6536300F2BE9005781C0 /* NewAppointmentBriefView.swift */; };
+		D5DE6539300F2DD2005781C0 /* HealthInsight.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5DE6538300F2DD2005781C0 /* HealthInsight.swift */; };
+		D5DE653B300F2E21005781C0 /* HealthInsightsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5DE653A300F2E21005781C0 /* HealthInsightsView.swift */; };
+		D5DE653D300F2EB7005781C0 /* CopilotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5DE653C300F2EB7005781C0 /* CopilotView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +77,9 @@
 		D5DE6532300F2B72005781C0 /* AppointmentBriefsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppointmentBriefsListView.swift; sourceTree = "<group>"; };
 		D5DE6534300F2BC1005781C0 /* AppointmentBriefDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppointmentBriefDetailView.swift; sourceTree = "<group>"; };
 		D5DE6536300F2BE9005781C0 /* NewAppointmentBriefView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewAppointmentBriefView.swift; sourceTree = "<group>"; };
+		D5DE6538300F2DD2005781C0 /* HealthInsight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthInsight.swift; sourceTree = "<group>"; };
+		D5DE653A300F2E21005781C0 /* HealthInsightsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthInsightsView.swift; sourceTree = "<group>"; };
+		D5DE653C300F2EB7005781C0 /* CopilotView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CopilotView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +149,9 @@
 				D5DE6530300F2ADE005781C0 /* AppointmentBrief.swift */,
 				D5DE6532300F2B72005781C0 /* AppointmentBriefsListView.swift */,
 				D5DE6536300F2BE9005781C0 /* NewAppointmentBriefView.swift */,
+				D5DE6538300F2DD2005781C0 /* HealthInsight.swift */,
+				D5DE653A300F2E21005781C0 /* HealthInsightsView.swift */,
+				D5DE653C300F2EB7005781C0 /* CopilotView.swift */,
 			);
 			path = MHBrightiOS;
 			sourceTree = "<group>";
@@ -314,9 +323,12 @@
 				D5DE652F300F27D3005781C0 /* ChatView.swift in Sources */,
 				D5DE6533300F2B72005781C0 /* AppointmentBriefsListView.swift in Sources */,
 				D5DE6521300B9FAF005781C0 /* HomeView.swift in Sources */,
+				D5DE6539300F2DD2005781C0 /* HealthInsight.swift in Sources */,
 				D5DE6527300C3425005781C0 /* RecordDetailView.swift in Sources */,
 				D5DE651D300B9D2E005781C0 /* APIClient.swift in Sources */,
 				D5DE652D300F2747005781C0 /* ChatMessage.swift in Sources */,
+				D5DE653B300F2E21005781C0 /* HealthInsightsView.swift in Sources */,
+				D5DE653D300F2EB7005781C0 /* CopilotView.swift in Sources */,
 				D5DE651F300B9E41005781C0 /* AuthManager.swift in Sources */,
 				D5DE6523300BA06D005781C0 /* HealthRecord.swift in Sources */,
 			);

@@ -522,6 +522,28 @@ class APIClient {
             throw APIError.badStatusCode(httpResponse.statusCode)
         }
     }
+    
+    func fetchHealthInsights(token: String) async throws -> [HealthInsight] {
+        let url = baseURL.appendingPathComponent("/api/v1/health_insights")
+
+        var request = URLRequest(url: url)
+        request.httpMethod = "GET"
+        request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
+        request.setValue("application/json", forHTTPHeaderField: "Accept")
+
+        let (data, response) = try await URLSession.shared.data(for: request)
+
+        guard let httpResponse = response as? HTTPURLResponse else {
+            throw APIError.invalidResponse
+        }
+
+        guard httpResponse.statusCode == 200 else {
+            throw APIError.badStatusCode(httpResponse.statusCode)
+        }
+
+        let decoded = try JSONDecoder().decode(HealthInsightsResponse.self, from: data)
+        return decoded.healthInsights
+    }
 }
 
 enum APIError: Error {
