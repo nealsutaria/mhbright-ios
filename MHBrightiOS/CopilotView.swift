@@ -18,9 +18,11 @@ struct CopilotView: View {
                             .font(.subheadline)
                             .foregroundStyle(.secondary)
                     }
-                    .padding(.vertical, 6)
+                    .padding(.vertical, 8)
                 }
+            }
 
+            Section {
                 NavigationLink {
                     HealthInsightsView()
                         .environmentObject(authManager)
@@ -33,7 +35,7 @@ struct CopilotView: View {
                             .font(.subheadline)
                             .foregroundStyle(.secondary)
                     }
-                    .padding(.vertical, 6)
+                    .padding(.vertical, 8)
                 }
             }
         }
