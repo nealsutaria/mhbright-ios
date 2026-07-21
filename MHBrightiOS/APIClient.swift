@@ -344,6 +344,73 @@ class APIClient {
             throw APIError.badStatusCode(httpResponse.statusCode)
         }
     }
+    
+    func fetchChatMessages(token: String) async throws -> [ChatMessage] {
+        let url = baseURL.appendingPathComponent("/api/v1/chat/messages")
+
+        var request = URLRequest(url: url)
+        request.httpMethod = "GET"
+        request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
+        request.setValue("application/json", forHTTPHeaderField: "Accept")
+
+        let (data, response) = try await URLSession.shared.data(for: request)
+
+        guard let httpResponse = response as? HTTPURLResponse else {
+            throw APIError.invalidResponse
+        }
+
+        guard httpResponse.statusCode == 200 else {
+            throw APIError.badStatusCode(httpResponse.statusCode)
+        }
+
+        let decoded = try JSONDecoder().decode(ChatMessagesResponse.self, from: data)
+        return decoded.messages
+    }
+
+    func sendChatMessage(message: String, token: String) async throws -> [ChatMessage] {
+        let url = baseURL.appendingPathComponent("/api/v1/chat/messages")
+
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.setValue("application/json", forHTTPHeaderField: "Accept")
+
+        let body = SendChatMessageRequest(message: message)
+        request.httpBody = try JSONEncoder().encode(body)
+
+        let (data, response) = try await URLSession.shared.data(for: request)
+
+        guard let httpResponse = response as? HTTPURLResponse else {
+            throw APIError.invalidResponse
+        }
+
+        guard httpResponse.statusCode == 200 else {
+            throw APIError.badStatusCode(httpResponse.statusCode)
+        }
+
+        let decoded = try JSONDecoder().decode(SendChatMessageResponse.self, from: data)
+        return decoded.messages
+    }
+
+    func clearChatMessages(token: String) async throws {
+        let url = baseURL.appendingPathComponent("/api/v1/chat/messages")
+
+        var request = URLRequest(url: url)
+        request.httpMethod = "DELETE"
+        request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
+        request.setValue("application/json", forHTTPHeaderField: "Accept")
+
+        let (_, response) = try await URLSession.shared.data(for: request)
+
+        guard let httpResponse = response as? HTTPURLResponse else {
+            throw APIError.invalidResponse
+        }
+
+        guard httpResponse.statusCode == 200 else {
+            throw APIError.badStatusCode(httpResponse.statusCode)
+        }
+    }
 }
 
 enum APIError: Error {

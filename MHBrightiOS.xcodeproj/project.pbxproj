@@ -23,6 +23,8 @@
 		D5DE6527300C3425005781C0 /* RecordDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5DE6526300C3425005781C0 /* RecordDetailView.swift */; };
 		D5DE6529300C3861005781C0 /* NewRecordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5DE6528300C3861005781C0 /* NewRecordView.swift */; };
 		D5DE652B300C3F21005781C0 /* EditRecordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5DE652A300C3F21005781C0 /* EditRecordView.swift */; };
+		D5DE652D300F2747005781C0 /* ChatMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5DE652C300F2747005781C0 /* ChatMessage.swift */; };
+		D5DE652F300F27D3005781C0 /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5DE652E300F27D3005781C0 /* ChatView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +64,8 @@
 		D5DE6526300C3425005781C0 /* RecordDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordDetailView.swift; sourceTree = "<group>"; };
 		D5DE6528300C3861005781C0 /* NewRecordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewRecordView.swift; sourceTree = "<group>"; };
 		D5DE652A300C3F21005781C0 /* EditRecordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditRecordView.swift; sourceTree = "<group>"; };
+		D5DE652C300F2747005781C0 /* ChatMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMessage.swift; sourceTree = "<group>"; };
+		D5DE652E300F27D3005781C0 /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +129,8 @@
 				D5DE6526300C3425005781C0 /* RecordDetailView.swift */,
 				D5DE6528300C3861005781C0 /* NewRecordView.swift */,
 				D5DE652A300C3F21005781C0 /* EditRecordView.swift */,
+				D5DE652C300F2747005781C0 /* ChatMessage.swift */,
+				D5DE652E300F27D3005781C0 /* ChatView.swift */,
 			);
 			path = MHBrightiOS;
 			sourceTree = "<group>";
@@ -290,9 +296,11 @@
 				D5DE6529300C3861005781C0 /* NewRecordView.swift in Sources */,
 				D5DE64F3300B9913005781C0 /* ContentView.swift in Sources */,
 				D5DE64F1300B9913005781C0 /* MHBrightiOSApp.swift in Sources */,
+				D5DE652F300F27D3005781C0 /* ChatView.swift in Sources */,
 				D5DE6521300B9FAF005781C0 /* HomeView.swift in Sources */,
 				D5DE6527300C3425005781C0 /* RecordDetailView.swift in Sources */,
 				D5DE651D300B9D2E005781C0 /* APIClient.swift in Sources */,
+				D5DE652D300F2747005781C0 /* ChatMessage.swift in Sources */,
 				D5DE651F300B9E41005781C0 /* AuthManager.swift in Sources */,
 				D5DE6523300BA06D005781C0 /* HealthRecord.swift in Sources */,
 			);

@@ -28,6 +28,18 @@ struct HomeView: View {
                         .foregroundStyle(.white)
                         .clipShape(RoundedRectangle(cornerRadius: 14))
                 }
+    
+                NavigationLink {
+                    ChatView()
+                        .environmentObject(authManager)
+                } label: {
+                    Text("Health Chat")
+                        .font(.headline)
+                        .frame(maxWidth: .infinity)
+                        .padding()
+                        .background(Color.green.opacity(0.15))
+                        .clipShape(RoundedRectangle(cornerRadius: 12))
+                }
 
                 Button {
                     Task {
