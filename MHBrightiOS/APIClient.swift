@@ -48,11 +48,7 @@ struct CreateRecordBody: Codable {
 class APIClient {
     static let shared = APIClient()
 
-    #if DEBUG
-    private let baseURL = URL(string: "http://127.0.0.1:3000")!
-    #else
     private let baseURL = URL(string: "https://mhbright.com")!
-    #endif
 
     private init() {}
 
