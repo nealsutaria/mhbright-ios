@@ -2,9 +2,11 @@ import SwiftUI
 
 struct LoginView: View {
     @EnvironmentObject var authManager: AuthManager
-    @State private var errorMessage = ""
+
     @State private var email = ""
     @State private var password = ""
+    @State private var errorMessage = ""
+    @State private var isLoggingIn = false
 
     var body: some View {
         VStack(spacing: 24) {
@@ -34,38 +36,78 @@ struct LoginView: View {
                     .background(Color(.secondarySystemBackground))
                     .clipShape(RoundedRectangle(cornerRadius: 14))
             }
+
             if !errorMessage.isEmpty {
                 Text(errorMessage)
                     .font(.footnote)
                     .foregroundStyle(.red)
+                    .multilineTextAlignment(.center)
             }
 
             Button {
                 Task {
-                    do {
-                        try await authManager.login(email: email, password: password)
-                        errorMessage = ""
-                    } catch {
-                        errorMessage = "Login failed. Check your email and password."
-                        print(error)
-                    }
+                    await login()
                 }
             } label: {
-                Text("Log In")
-                    .fontWeight(.semibold)
-                    .frame(maxWidth: .infinity)
-                    .padding()
-                    .background(Color.indigo)
-                    .foregroundStyle(.white)
-                    .clipShape(RoundedRectangle(cornerRadius: 14))
+                if isLoggingIn {
+                    ProgressView()
+                        .frame(maxWidth: .infinity)
+                        .padding()
+                } else {
+                    Text("Log In")
+                        .fontWeight(.semibold)
+                        .frame(maxWidth: .infinity)
+                        .padding()
+                }
+            }
+            .background(Color.indigo)
+            .foregroundStyle(.white)
+            .clipShape(RoundedRectangle(cornerRadius: 14))
+            .disabled(isLoggingIn || email.isEmpty || password.isEmpty)
+
+            NavigationLink {
+                SignupView()
+                    .environmentObject(authManager)
+            } label: {
+                Text("Don't have an account? Sign Up")
+                    .font(.footnote)
             }
 
             Spacer()
         }
         .padding()
     }
+
+    private func login() async {
+        let trimmedEmail = email.trimmingCharacters(in: .whitespacesAndNewlines)
+
+        guard !trimmedEmail.isEmpty else {
+            errorMessage = "Email cannot be empty."
+            return
+        }
+
+        guard !password.isEmpty else {
+            errorMessage = "Password cannot be empty."
+            return
+        }
+
+        isLoggingIn = true
+        errorMessage = ""
+
+        do {
+            try await authManager.login(email: trimmedEmail, password: password)
+        } catch {
+            errorMessage = "Login failed. Check your email and password."
+            print(error)
+        }
+
+        isLoggingIn = false
+    }
 }
 
 #Preview {
-    LoginView()
+    NavigationStack {
+        LoginView()
+            .environmentObject(AuthManager())
+    }
 }

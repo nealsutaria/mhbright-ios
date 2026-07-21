@@ -544,6 +544,37 @@ class APIClient {
         let decoded = try JSONDecoder().decode(HealthInsightsResponse.self, from: data)
         return decoded.healthInsights
     }
+    
+    func signup(email: String, password: String, passwordConfirmation: String) async throws -> LoginResponse {
+        let url = baseURL.appendingPathComponent("/api/v1/signup")
+
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.setValue("application/json", forHTTPHeaderField: "Accept")
+
+        let body: [String: [String: String]] = [
+            "user": [
+                "email": email,
+                "password": password,
+                "password_confirmation": passwordConfirmation
+            ]
+        ]
+
+        request.httpBody = try JSONEncoder().encode(body)
+
+        let (data, response) = try await URLSession.shared.data(for: request)
+
+        guard let httpResponse = response as? HTTPURLResponse else {
+            throw APIError.invalidResponse
+        }
+
+        guard httpResponse.statusCode == 201 else {
+            throw APIError.badStatusCode(httpResponse.statusCode)
+        }
+
+        return try JSONDecoder().decode(LoginResponse.self, from: data)
+    }
 }
 
 enum APIError: Error {

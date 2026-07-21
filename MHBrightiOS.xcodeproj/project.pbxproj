@@ -32,6 +32,7 @@
 		D5DE6539300F2DD2005781C0 /* HealthInsight.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5DE6538300F2DD2005781C0 /* HealthInsight.swift */; };
 		D5DE653B300F2E21005781C0 /* HealthInsightsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5DE653A300F2E21005781C0 /* HealthInsightsView.swift */; };
 		D5DE653D300F2EB7005781C0 /* CopilotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5DE653C300F2EB7005781C0 /* CopilotView.swift */; };
+		D5DE653F300F317A005781C0 /* SignupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5DE653E300F317A005781C0 /* SignupView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +81,7 @@
 		D5DE6538300F2DD2005781C0 /* HealthInsight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthInsight.swift; sourceTree = "<group>"; };
 		D5DE653A300F2E21005781C0 /* HealthInsightsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthInsightsView.swift; sourceTree = "<group>"; };
 		D5DE653C300F2EB7005781C0 /* CopilotView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CopilotView.swift; sourceTree = "<group>"; };
+		D5DE653E300F317A005781C0 /* SignupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,6 +154,7 @@
 				D5DE6538300F2DD2005781C0 /* HealthInsight.swift */,
 				D5DE653A300F2E21005781C0 /* HealthInsightsView.swift */,
 				D5DE653C300F2EB7005781C0 /* CopilotView.swift */,
+				D5DE653E300F317A005781C0 /* SignupView.swift */,
 			);
 			path = MHBrightiOS;
 			sourceTree = "<group>";
@@ -311,6 +314,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D5DE653F300F317A005781C0 /* SignupView.swift in Sources */,
 				D5DE6535300F2BC1005781C0 /* AppointmentBriefDetailView.swift in Sources */,
 				D5DE651B300B9AD9005781C0 /* LoginView.swift in Sources */,
 				D5DE6525300BA11C005781C0 /* RecordsListView.swift in Sources */,

@@ -26,6 +26,20 @@ class AuthManager: ObservableObject {
         UserDefaults.standard.set(response.token, forKey: tokenKey)
         UserDefaults.standard.set(response.user.email, forKey: emailKey)
     }
+    
+    func signup(email: String, password: String, passwordConfirmation: String) async throws {
+        let response = try await APIClient.shared.signup(
+            email: email,
+            password: password,
+            passwordConfirmation: passwordConfirmation
+        )
+
+        self.token = response.token
+        self.userEmail = response.user.email
+
+        UserDefaults.standard.set(response.token, forKey: tokenKey)
+        UserDefaults.standard.set(response.user.email, forKey: emailKey)
+    }
 
     func logout() async {
         let currentToken = token

@@ -5,11 +5,15 @@ struct ContentView: View {
 
     var body: some View {
         if authManager.isLoggedIn {
-            HomeView()
-                .environmentObject(authManager)
+            NavigationStack {
+                HomeView()
+                    .environmentObject(authManager)
+            }
         } else {
-            LoginView()
-                .environmentObject(authManager)
+            NavigationStack {
+                LoginView()
+                    .environmentObject(authManager)
+            }
         }
     }
 }
